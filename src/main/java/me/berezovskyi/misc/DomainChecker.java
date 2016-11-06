@@ -14,11 +14,11 @@ public class DomainChecker {
         } else if (args.length > 1) {
             throw new UnsupportedOperationException("Multiple domains are not supported");
         }
-        Record[] records = new Record[0];
+        Record[] records;
         try {
             records = new Lookup(host, Type.NS).run();
         } catch (TextParseException e) {
-            e.printStackTrace();
+            throw new IllegalStateException("NS record lookup failed", e);
         }
         if (records != null) {
             for (final Record record : records) {
