@@ -26,3 +26,35 @@ P.S. I also had to look up a `.gitignore` file for Java, Maven, and Intellij.
     Host google.com has nameserver ns1.google.com.
     Host google.com has nameserver ns4.google.com.
     Host google.com has nameserver ns3.google.com.
+
+
+Or
+
+    mvn clean compile exec:java -Dexec.args="facebook.com"
+    [INFO] Scanning for projects...
+    [INFO]
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Building dns-test 0.0.1-SNAPSHOT
+    [INFO] ------------------------------------------------------------------------
+    [INFO]
+    [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ dns-test ---
+    [INFO] Deleting /Users/andrew/code/dns-test/target
+    [INFO]
+    [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ dns-test ---
+    [INFO] Using 'UTF-8' encoding to copy filtered resources.
+    [INFO] skip non existing resourceDirectory /Users/andrew/code/dns-test/src/main/resources
+    [INFO]
+    [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ dns-test ---
+    [INFO] Changes detected - recompiling the module!
+    [INFO] Compiling 1 source file to /Users/andrew/code/dns-test/target/classes
+    [INFO]
+    [INFO] --- exec-maven-plugin:1.5.0:java (default-cli) @ dns-test ---
+    Host facebook.com has nameserver a.ns.facebook.com.
+    Host facebook.com has nameserver b.ns.facebook.com.
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time: 1.952 s
+    [INFO] Finished at: 2016-11-06T02:05:35+01:00
+    [INFO] Final Memory: 15M/212M
+    [INFO] ------------------------------------------------------------------------
