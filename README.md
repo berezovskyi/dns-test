@@ -63,10 +63,6 @@ Or
 
 With a bit of magic, we can do even better:
 
-    $ mvn -q exec:java -Dexec.args="facebook.com"
-    Host facebook.com has nameserver b.ns.facebook.com.
-    Host facebook.com has nameserver a.ns.facebook.com.
-    
-    $ mvn -q clean package exec:java -DskipTests -Dexec.args="facebook.com"
+    $ mvn -q clean compile exec:java -Dexec.args="facebook.com"
     Host facebook.com has nameserver b.ns.facebook.com.
     Host facebook.com has nameserver a.ns.facebook.com.
