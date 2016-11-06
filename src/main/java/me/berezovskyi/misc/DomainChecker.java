@@ -1,6 +1,5 @@
 package me.berezovskyi.misc;
 
-import java.util.Optional;
 import org.xbill.DNS.Lookup;
 import org.xbill.DNS.NSRecord;
 import org.xbill.DNS.Record;
@@ -9,7 +8,12 @@ import org.xbill.DNS.Type;
 
 public class DomainChecker {
     public static void main(String[] args) {
-        String host = Optional.ofNullable(args[0]).orElse("gmail.com");
+        String host = "gmail.com";
+        if (args.length == 1) {
+            host = args[0];
+        } else if (args.length > 1) {
+            throw new UnsupportedOperationException("Multiple domains are not supported");
+        }
         Record[] records = new Record[0];
         try {
             records = new Lookup(host, Type.NS).run();
