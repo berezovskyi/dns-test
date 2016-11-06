@@ -60,3 +60,13 @@ Or
     [INFO] Finished at: 2016-11-06T02:05:35+01:00
     [INFO] Final Memory: 15M/212M
     [INFO] ------------------------------------------------------------------------
+
+With a bit of magic, we can do even better:
+
+    $ mvn -q exec:java -Dexec.args="facebook.com"
+    Host facebook.com has nameserver b.ns.facebook.com.
+    Host facebook.com has nameserver a.ns.facebook.com.
+    
+    $ mvn -q clean package exec:java -DskipTests -Dexec.args="facebook.com"
+    Host facebook.com has nameserver b.ns.facebook.com.
+    Host facebook.com has nameserver a.ns.facebook.com.
