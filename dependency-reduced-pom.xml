@@ -9,21 +9,6 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.5.0</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>java</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <mainClass>me.berezovskyi.misc.DomainChecker</mainClass>
-        </configuration>
-      </plugin>
-      <plugin>
         <artifactId>maven-shade-plugin</artifactId>
         <version>2.4.3</version>
         <executions>
@@ -41,6 +26,19 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>appassembler-maven-plugin</artifactId>
+        <version>1.10</version>
+        <configuration>
+          <programs>
+            <program>
+              <mainClass>me.berezovskyi.misc.DomainChecker</mainClass>
+              <id>dns-test</id>
+            </program>
+          </programs>
+        </configuration>
       </plugin>
     </plugins>
   </build>
