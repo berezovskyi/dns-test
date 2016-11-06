@@ -26,6 +26,8 @@ P.S. I also had to look up a `.gitignore` file for Java, Maven, and Intellij.
     Host google.com has nameserver ns1.google.com.
     Host google.com has nameserver ns4.google.com.
     Host google.com has nameserver ns3.google.com.
+    $ sh target/appassembler/bin/dns-test dwvwdv3r.ed
+    Host dwvwdv3r.ed has no nameservers
 
 
 Or
