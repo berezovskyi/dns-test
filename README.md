@@ -6,7 +6,7 @@ I was working on another project and wanted to see how easy it is to check if th
 
 I found http://www.xbill.org/dnsjava/dnsjava-current/examples.html and wanted to try it out. Let's run this Java snippet quickly. After all, Java development is my daily job. Right?
 
-Wrong! To write a (proper) minimal Java program that takes one command-line arguments, I had to do the following:
+Wrong! To write a (proper) minimal Java program that takes a single command-line argument, I had to do the following:
 
 1. Use `maven-archetype-quickstart`. Sets up the `pom.xml` properly and creates a class with a `main` method. I do not mention a ton of fields that need to be filled.
 2. Add maven dependency for the library I want to play with. The most pleasant step of the this process.
